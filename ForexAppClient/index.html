@@ -12,7 +12,7 @@
 		<!-- meta character set -->
 		<meta charset="UTF-8">
 		<!-- Site Title -->
-		<title>ANN - Book your Travel Money</title>
+		<title>ForexApp - Book your Travel Money</title>
 
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
 			<!--
@@ -30,11 +30,6 @@
 			
 			
 <script>
-
-//var From = document.getElementsByName("From")[0].value;
-//var To = document.getElementsByName("To")[1].value;
-//var Amount = document.getElementsByName("Amount")[2].value;
-//var Date = document.getElementsByName("Date")[3].value;
 
 
 usdRate = []
@@ -59,7 +54,7 @@ function compiled(){
 }
 
 function makeTransCall(){
-	var url = "http://10.0.1.232:8000/make_trans";
+	var url = "http://localhost:8009/make_trans";
 	var http = new XMLHttpRequest();
 	http.open("GET", url, true);
 	http.onreadystatechange = function() { if(http.readyState == 4 && http.status == 200) { console.log(http.responseText) }}
@@ -69,7 +64,7 @@ function makeTransCall(){
 }
 
 function getAllTrans(){
-	var url = "http://10.0.1.232:8000/get_all_trans";
+	var url = "http://localhost:8009/get_all_trans";
 	var http = new XMLHttpRequest();
 	http.open("GET", url, true);
 	http.onreadystatechange = function() { if(http.readyState == 4 && http.status == 200) { console.log(http.responseText) }}
