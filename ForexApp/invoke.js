@@ -60,7 +60,7 @@ Fabric_Client.newDefaultKeyValueStore({ path: store_path
 	// must send the proposal to endorsing peers
 	var request = {
 		//targets: let default to the peer assigned to the client
-		chaincodeId: 'annapp',
+		chaincodeId: 'ForexApp',
 		fcn: 'acceptTrans',
 		args: ['TRANS3','transid','from','to','fromCurrency','toCurrency','amount','rate','status','QRdata'],
 		chainId: 'mychannel',

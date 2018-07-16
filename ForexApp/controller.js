@@ -58,7 +58,7 @@ return{
 		    }
 
 		const request = {
-			chaincodeId: 'annapp',
+			chaincodeId: 'ForexApp',
 			fcn: 'queryAllTrans',
 			args: ['']
 		};
@@ -122,7 +122,7 @@ return{
 		    }
 
 		const request = {
-			chaincodeId: 'annapp',
+			chaincodeId: 'ForexApp',
 			fcn: 'queryTran',
 			args: ['TRANS1']
 		};
@@ -191,7 +191,7 @@ return{
 		    // send proposal to endorser
 		    const request = {
 		        //targets : --- letting this default to the peers assigned to the channel
-		        chaincodeId: 'annapp',
+		        chaincodeId: 'ForexApp',
 		        fcn: 'makeTrans',
 		        args: [req.params.id,'transid','from','to','fromCurrency','toCurrency','amount','rate',req.params.type,'QRdata'],
 		        chainId: 'mychannel',
@@ -342,7 +342,7 @@ return{
 		    // send proposal to endorser
 		    const request = {
 		        //targets : --- letting this default to the peers assigned to the channel
-		        chaincodeId: 'annapp',
+		        chaincodeId: 'ForexApp',
 		        fcn: 'makeTrans',
 		        args: ['TRANS3','transid','from','to','fromCurrency','toCurrency','amount','rate','makeOrder','QRdata'],
 		        chainId: 'mychannel',
@@ -493,7 +493,7 @@ return{
 		    // send proposal to endorser
 		    const request = {
 		        //targets : --- letting this default to the peers assigned to the channel
-		        chaincodeId: 'annapp',
+		        chaincodeId: 'ForexApp',
 		        fcn: 'acceptTrans',
 		        args: ['TRANS4','transid','from','to','fromCurrency','toCurrency','amount','rate','acceptOrder','QRdata'],
 		        chainId: 'mychannel',
@@ -644,7 +644,7 @@ return{
 		    // send proposal to endorser
 		    const request = {
 		        //targets : --- letting this default to the peers assigned to the channel
-		        chaincodeId: 'annapp',
+		        chaincodeId: 'ForexApp',
 		        fcn: 'completeTrans',
 		        args: ['TRANS5','transid','from','to','fromCurrency','toCurrency','amount','rate','confirmOrder','QRdata'],
 		        chainId: 'mychannel',

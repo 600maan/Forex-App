@@ -1,8 +1,8 @@
 {
-    "name": "annapp",
+    "name": "ForexApp",
     "version": "1.0.0",
     "description": "Hyperledger Fabric Car Sample Application",
-    "main": "annapp.js",
+    "main": "ForexApp.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
