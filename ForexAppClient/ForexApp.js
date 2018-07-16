@@ -1,6 +1,7 @@
 // JS library for ForexApp
 
 var ForexApp = {
+    ServerURL: "http://localhost:8009",
     Assest : {},
     Transaction : {},
     test : function(){
@@ -15,6 +16,9 @@ var ForexApp = {
 
         alert(JSON.stringify(trans));
     },
+    ViewOrder : function(){
+        ForexApp.GetAllTransactions();
+    },
     SetDataModel : function(){
         // Create a data model to be used in application
     },
@@ -22,51 +26,30 @@ var ForexApp = {
         // return Data model that are being used in application
     },
     GetAllTransactions : function(){
-        // Get all transactions from server
-        var url = "http://localhost:8009/get_all_trans";
-        var http = new XMLHttpRequest();
-        http.open("GET", url, true);
-        http.onreadystatechange = function() { if(http.readyState == 4 && http.status == 200) { console.log(http.responseText) }}
-        http.send();
-        pageRedirect2();
-        return result;
+        var url = this.ServerURL + "/get_all_trans";
+        $.ajax({
+            url: url,
+            type: "GET",
+            cache: false,
+            success: function(res){
+                alert(JSON.stringify(res));
+            }
+          });
     },
     CreateTransaction : function (args){
-        // Send args to the server to create transactions
-	    var TID = "TRANS4";
-	    var doctype = "trans";
-	    var transid = "transid";
-	    var fromUser = "fromUser";
-	    var toUser ="toUser";
-	    var fromCurernecy = "fromCurrency";
-	    var toCurrency = "toCurrency";
-	    var amount = "amount";
-    	var rate = "rate";
-	    var status = "makeOrder";
-	    var QBDAta = "qbdata";
-
-	    var url = "http://localhost:8009/make_trans";
-	    var params = "TID="+ TID + "&" + "doctype=" + doctype + "transid=" + transid + "fromUser=" + fromUser + "toUser=" + toUser + "fromCurernecy=" + fromCurernecy + "toCurrency=" + toCurrency + "amount=" + amount + "rate=" + rate + "status=" + status + "QBData=" + QBData;
-	    var http = new XMLHttpRequest();
-
-	    http.open("GET", url+"?"+params, true);
-	    http.onreadystatechange = function() { if(http.readyState == 4 && http.status == 200) { console.log(http.responseText); }}
-	    http.send();
+        var params ={};
+        var url = this.ServerURL + "/make_trans";
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: params,
+            cache: false,
+            success: function(res){
+                alert(JSON.stringify(res));
+            }
+          });
     },
     UpdateTransaction : function (args){
         // Send args to the server to update transactions
-    },
-    PageRedirect : function pageRedirect(){
-        var delay = 1000;
-        setTimeout(function(){
-            window.location = "successful.html";
-        },delay);
-        
-    },
-    PageRedirect2 : function pageRedirect2(){
-        var delay = 1000;
-        setTimeout(function(){
-            window.location = "trans.html";
-        },delay);    
     }
 }

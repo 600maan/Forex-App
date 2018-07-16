@@ -1,43 +1,54 @@
 <!DOCTYPE html>
 <html>
-        <head>
-        <script src="ForexApp.js"></script>	                 
-        <script> </script>
-        </head>
-        <body>
 
-<h2>Client UI</h2>
+<head>
+        <script src="ForexApp.js"></script>
+        <script src="jquery-3.3.1.min.js"></script>
+</head>
 
-<div id="buy">
-    From Currency:<br>
-        <select type="text" id="fromCurrency">   
-                <option value="HKD" selected>HKD</option>
-                <option value="USD">USD</option>
-                <option value="GBP">GBP</option>
-                <option value="JPY">JPY</option>
-                <option value="RMB">RMB</option>									
-        </select>	
-    <br>
-    From Currency Amount:<br>
-    <input type="text" id="fromCurrencyAmount" value="0.00">
-    <br><br>
-    To Currency:<br>
-        <select type="text" id="toCurrency">   
-                <option value="HKD" selected>HKD</option>
-                <option value="USD">USD</option>
-                <option value="GBP">GBP</option>
-                <option value="JPY">JPY</option>
-                <option value="RMB">RMB</option>									
-        </select>
-    <br>
-    To Currency Amount:<br>
-    <input type="text" id="toCurrencyAmount" value="0.00">
-    <br><br>
-    Date of Collection:<br>
-    <input type="date" id="collectiondate">
-    <br><br>
-    <input type="submit" value="Buy" onclick="ForexApp.test()">
-</div>
- 
+<body>
+        <h2>Client UI</h2>
+        <div id="placeOrder">
+                <form>
+                        From Currency:
+                        <br>
+                        <select type="text" id="fromCurrency">
+                                <option value="HKD" selected>HKD</option>
+                                <option value="USD">USD</option>
+                                <option value="GBP">GBP</option>
+                                <option value="JPY">JPY</option>
+                                <option value="RMB">RMB</option>
+                        </select>
+                        <br> From Currency Amount:
+                        <br>
+                        <input type="text" id="fromCurrencyAmount" value="0.00">
+                        <br>
+                        <br> To Currency:
+                        <br>
+                        <select type="text" id="toCurrency" required>
+                                <option value="HKD" selected>HKD</option>
+                                <option value="USD">USD</option>
+                                <option value="GBP">GBP</option>
+                                <option value="JPY">JPY</option>
+                                <option value="RMB">RMB</option>
+                        </select>
+                        <br> To Currency Amount:
+                        <br>
+                        <input type="text" id="toCurrencyAmount" value="0.00">
+                        <br>
+                        <br> Date of Collection:
+                        <br>
+                        <input type="date" id="collectiondate">
+                        <br>
+                        <br>
+                        <input type="submit" value="Buy" onclick="ForexApp.test()">
+                </form>
+        </div>
+        <br>
+        <br>
+        <div id="viewOrder">
+                <input type="submit" value="View Order" onclick="ForexApp.ViewOrder()">
+        </div>
 </body>
+
 </html>
