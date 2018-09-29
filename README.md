@@ -4,7 +4,7 @@ A distributed foriegn currency application for buying and selling currencies.
 
 Steps
 
-1) ./start.sh
+1) ./startFabric.sh -l node
 2) $ npm install
 3) $ node registerAdmin.js
 4) $ node registerUser.js
