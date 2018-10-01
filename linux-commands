@@ -1,0 +1,10 @@
+// List processes that are using tcp ports and kill process 
+sudo netstat -natp | grep tcp6 
+sudo kill process_id
+
+
+// Stop and remove all containers
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+
+
