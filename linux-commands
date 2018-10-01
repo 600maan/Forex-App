@@ -2,6 +2,11 @@
 sudo netstat -natp | grep tcp6 
 sudo kill process_id
 
+// List ID of process using port 80 
+fuser 80/tcp
+// Kill all process using port 80/ i.e release port 80
+fuser -k 80/tcp
+
 
 // Stop and remove all containers
 docker stop $(docker ps -a -q)
