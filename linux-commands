@@ -7,4 +7,10 @@ sudo kill process_id
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
 
+// Print all environment variables
+printenv
+
+// print value of a environment variable 
+echo $PATH
+
 
