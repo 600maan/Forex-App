@@ -7,8 +7,8 @@ var ForexApp = {
     test : function(){
         var trans = {
             date : document.getElementById("collectiondate").value,
-            fromCurrency: document.getElementById("fromCurrency").value,
-            toCurrency: document.getElementById("toCurrency").value,
+            fromCurrency: document.getElementById("fromCurrencySelect").value,
+            toCurrency: document.getElementById("toCurrencySelect").value,
             fromCurrencyAmount: document.getElementById("fromCurrencyAmount").value,
             toCurrencyAmount: document.getElementById("toCurrencyAmount").value,
            // currencyRate: document.getElementById("collectiondate").value

@@ -34,21 +34,9 @@ let Chaincode = class {
 
   async initLedger(stub, args) {
     let users = [];
-    users.push({
-      uid: 'user1',
-      name: 'user1',
-      pwd: 'user1'
-    });
-    users.push({
-      uid: 'user2',
-      name: 'user2',
-      pwd: 'user2'
-    });
-    users.push({
-      uid: 'user3',
-      name: 'user3',
-      pwd: 'user3'
-    });
+    users.push({ uid: 'user1', name: 'user1', pwd: 'user1' });
+    users.push({ uid: 'user2', name: 'user2', pwd: 'user2' });
+    users.push({ uid: 'user3', name: 'user3', pwd: 'user3' });
     let credits = [];
     credits.push({
       currencytype: 'HKD',

@@ -2,53 +2,67 @@
 <html>
 
 <head>
-        <script src="ForexApp.js"></script>
-        <script src="jquery-3.3.1.min.js"></script>
+<script src="ForexApp.js"></script>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+function getRate(){
+        // Read From Currency and To Currency to determine the Rate
+        let rate = 7.5;
+        $("#toCurrencyAmount").val($("#fromCurrencyAmount").val() * rate);
+        $("#toCurDiv").show(); 
+        $("#calenderDiv").show();
+}
+$(document).ready(function() {
+  $("#toCurrencySelect").change(() => { $("#fromCurDiv").show(); });
+});
+
+</script>
 </head>
 
 <body>
-        <h2>ForexApp</h2>
-        <div id="placeOrder">
-                <form>
-                        From Currency:
-                        <br>
-                        <select type="text" id="fromCurrency">
-                                <option value="HKD" selected>HKD</option>
-                                <option value="USD">USD</option>
-                                <option value="GBP">GBP</option>
-                                <option value="JPY">JPY</option>
-                                <option value="RMB">RMB</option>
-                        </select>
-                        <br> From Currency Amount:
-                        <br>
-                        <input type="text" id="fromCurrencyAmount" value="0.00">
-                        <br>
-                        <br> To Currency:
-                        <br>
-                        <select type="text" id="toCurrency" required>
-                                <option value="HKD" selected>HKD</option>
-                                <option value="USD">USD</option>
-                                <option value="GBP">GBP</option>
-                                <option value="JPY">JPY</option>
-                                <option value="RMB">RMB</option>
-                        </select>
-                        <br> To Currency Amount:
-                        <br>
-                        <input type="text" id="toCurrencyAmount" value="0.00">
-                        <br>
-                        <br> Date of Collection:
-                        <br>
-                        <input type="date" id="collectiondate">
-                        <br>
-                        <br>
-                        <input type="submit" value="Buy" onclick="ForexApp.test()">
-                </form>
+<h2>ForexApp</h2>
+<div id="placeOrder">
+<div id="fromCurrencyDiv">
+        <span>From Currency:</span> 
+        <select type="text" id="fromCurrencySelect">
+                <option value="None" selected>Select Currency</option>
+                <option value="HKD">HKD</option>
+                <option value="USD">USD</option>
+                <option value="GBP">GBP</option>
+                <option value="JPY">JPY</option>
+                <option value="RMB">RMB</option>
+        </select><br>
+        <div id="fromCurDiv" style="display: none;">                 
+                <span>Enter Currency:</span><br>
+                <input type="text" id="fromCurrencyAmount"><br><br> 
+                <input type="submit" value="Get Rate" onclick="getRate()">
         </div>
-        <br>
-        <br>
-        <div id="viewOrder">
-                <input type="submit" value="View Order" onclick="ForexApp.ViewOrder()">
-        </div>
+</div><br>
+<div id="toCurrencyDiv">
+        <span> To Currency: </span> 
+        <select type="text" id="toCurrencySelect" required>
+                <option value="None" selected>Select Currency</option>
+                <option value="HKD">HKD</option>
+                <option value="USD">USD</option>
+                <option value="GBP">GBP</option>
+                <option value="JPY">JPY</option>
+                <option value="RMB">RMB</option>
+        </select><br>
+<div id="toCurDiv" style="display: none;">
+        <span>Converted amount:</span> <br>
+        <input type="text" id="toCurrencyAmount" disabled><br><br> 
+</div>
+</div><br><br>
+<div id="calenderDiv" style="display: none;">
+        <span>Date of Collection:</span><br>
+        <input type="date" id="collectiondate"><br><br>
+        <input type="submit" value="Buy" onclick="ForexApp.test()">
+</div>
+
+</div><br><br>
+<div id="viewOrder">
+<input type="submit" value="View Order" onclick="ForexApp.ViewOrder()">
+</div>
 </body>
 
 </html>
