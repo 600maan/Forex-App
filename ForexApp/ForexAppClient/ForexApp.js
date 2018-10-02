@@ -1,7 +1,7 @@
 // JS library for ForexApp
 
 var ForexApp = {
-    ServerURL: "http://localhost:8009",
+    ServerURL: "http://localhost:8007",
     Assest : {},
     Transaction : {},
     test : function(){

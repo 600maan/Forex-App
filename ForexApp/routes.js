@@ -3,7 +3,9 @@
 var ForexApp = require('./controller.js');
 
 module.exports = function(app){
-
+  app.get('/index', function(req, res) {
+    ForexApp.index(req, res);
+  });
   app.get('/get_all_trans', function(req, res){
     ForexApp.get_all_trans(req, res);
   });

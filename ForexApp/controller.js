@@ -19,6 +19,10 @@ var os            = require('os');
 
 module.exports = (function() {
 return{
+	index: function(req, res){
+		res.setHeader("Access-Control-Allow-Origin","*");
+		res.sendFile(path.join(__dirname + '/ForexAppClient/forexappclient.html'));
+	},
 	get_all_trans: function(req, res){
 		res.setHeader("Access-Control-Allow-Origin","*");
 		console.log("getting all transactions from database: ");
